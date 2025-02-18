@@ -9,5 +9,5 @@ app.get('/',(req,res)=>{
 
 const port = 3000;
 app.listen(port,()=>{
-    console,log(`Aplicação está em execução\n http://localhost:${port}`)
+    console.log(`Aplicação está em execução\n http://localhost:${port}`)
 });
