@@ -4,8 +4,17 @@ const app = express();
 app.use(express.json());
 
 app.get('/',(req,res)=>{
-    return res.status(200).json();
+    const resposta = {
+        "Result":"API em execução"
+    }
+    return res.status(200).json("API em execução");
 });
+
+app.get('/soma',(req,res)=>{
+    const {valores} = req.body;
+    console.log(valores);
+    return res.status.json({"teste":0})
+})
 
 const port = 3000;
 app.listen(port,()=>{
