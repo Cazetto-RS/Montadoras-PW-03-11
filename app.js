@@ -6,17 +6,17 @@ app.use(express.json());
 app.get('/',(req,res)=>{
     const resposta = {
         "Result":"API em execução"
-    }
-    return res.status(200).json("API em execução");
+    }  
+    return res.status(200).json(resposta);
 });
 
 app.get('/soma',(req,res)=>{
     const {valores} = req.body;
-    console.log(valores);
-    return res.status.json({"teste":0})
+    let result = valores.reduce((total, valor)=>total+valor,0)
+    return res.status(200).json({"result":result})
 })
 
 const port = 3000;
 app.listen(port,()=>{
-    console.log(`Aplicação está em execução\n http://localhost:${port}`)
-});
+    console.log(`Aplicação esta em execução\nhttp://localhost:${port}`)
+})
