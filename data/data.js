@@ -129,8 +129,8 @@ export const alunos = [
     },
     {
         "id": 14,
-        "nome": "Patrícia",
-        "foto": "asset/alunos/patricia.jpg"
+        "nome": "Carol",
+        "foto": "asset/alunos/carol.jpg"
     },
     {
         "id": 15,
