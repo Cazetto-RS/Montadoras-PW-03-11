@@ -1,0 +1,11 @@
+http://localhost:3030/alunos (todos os alunos).
+
+http://localhost:3030/alunos/2 (aluno específico pelo ID).
+
+http://localhost:3030/alunos?nome= (alunos filtrados por nome).
+
+http://localhost:3030/disciplinas (todas as disciplinas).
+
+http://localhost:3030/disciplinas/2 (disciplina específica pelo ID).
+
+http://localhost:3030/disciplinas?nome= (disciplinas filtradas por nome).

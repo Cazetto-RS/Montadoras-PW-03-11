@@ -1,62 +1,62 @@
 export const disciplinas = [
     {
         "id": 1,
-        "nome: ": "BD-2",
+        "nome": "BD-2",
         "horas": 200
     },
     {
         "id": 2,
-        "nome: ": "DS",
+        "nome": "DS",
         "horas": 300
     },
     {
         "id": 3,
-        "nome: ": "Programação Orientada a Objetos",
+        "nome": "Programação Orientada a Objetos",
         "horas": 150
     },
     {
         "id": 4,
-        "nome: ": "Redes de Computadores",
+        "nome": "Redes de Computadores",
         "horas": 180
     },
     {
         "id": 5,
-        "nome: ": "Segurança da Informação",
+        "nome": "Segurança da Informação",
         "horas": 120
     },
     {
         "id": 6,
-        "nome: ": "Inteligência Artificial",
+        "nome": "Inteligência Artificial",
         "horas": 250
     },
     {
         "id": 7,
-        "nome: ": "Desenvolvimento Web",
+        "nome": "Desenvolvimento Web",
         "horas": 220
     },
     {
         "id": 8,
-        "nome: ": "Sistemas Operacionais",
+        "nome": "Sistemas Operacionais",
         "horas": 200
     },
     {
         "id": 9,
-        "nome: ": "Engenharia de Software",
+        "nome": "Engenharia de Software",
         "horas": 300
     },
     {
         "id": 10,
-        "nome: ": "Banco de Dados Avançado",
+        "nome": "Banco de Dados Avançado",
         "horas": 150
     },
     {
         "id": 11,
-        "nome: ": "Machine Learning",
+        "nome": "Machine Learning",
         "horas": 200
     },
     {
         "id": 12,
-        "nome: ": "Computação em Nuvem",
+        "nome": "Computação em Nuvem",
         "horas": 180
     }
 ];
