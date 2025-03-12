@@ -1,11 +1,19 @@
-http://localhost:3030/alunos (todos os alunos).
+Montadoras:
+Listar todas: http://localhost:3000/montadora
 
-http://localhost:3030/alunos/2 (aluno específico pelo ID).
+Buscar por ID: http://localhost:3000/montadora/id
 
-http://localhost:3030/alunos?nome= (alunos filtrados por nome).
+Buscar por nome: http://localhost:3000/montadora?search=...
 
-http://localhost:3030/disciplinas (todas as disciplinas).
 
-http://localhost:3030/disciplinas/2 (disciplina específica pelo ID).
 
-http://localhost:3030/disciplinas?nome= (disciplinas filtradas por nome).
+Veículos:
+Listar todos: http://localhost:3000/veiculo
+
+Buscar por ID: http://localhost:3000/veiculo/id
+
+Buscar por ID da montadora: http://localhost:3000/veiculo?montadora=id
+
+Buscar por parte do nome: http://localhost:3000/veiculo?search=...
+
+Buscar por nome da montadora: http://localhost:3000/veiculo?search=...

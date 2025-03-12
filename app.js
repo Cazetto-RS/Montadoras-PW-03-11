@@ -1,50 +1,49 @@
 import express from 'express';
-import * as alunos from './service/alunos.js';
-import * as disciplinas from './service/disciplinas.js'; // Importação correta de todas as funções de disciplinas
+import * as montadoras from './service/montadoras.js';
+import * as veiculos from './service/veiculos.js';
 
 const app = express();
-const PORT = 3030;
+const PORT = 3000;
 
 // Rota principal
 app.get('/', (req, res) => {
     return res.status(200).json({
-        "alunos": `http://localhost:${PORT}/alunos`,
-        "disciplinas": `http://localhost:${PORT}/disciplinas`
+        "veiculos": `http://localhost:${PORT}/veiculo`,
+        "montadoras": `http://localhost:${PORT}/montadora`
     });
 });
 
-// Rota para listar alunos (com filtro por nome)
-app.get('/alunos', (req, res) => {
-    let nome = req.query.nome;
-    return res.status(200).json(alunos.listar(nome));
+// Rota para listar todas as montadoras (com filtro por nome)
+app.get('/montadora', (req, res) => {
+    const { search } = req.query; // Captura o parâmetro de busca
+    return res.status(200).json(montadoras.listar(search));
 });
 
-// Rota para buscar um aluno por ID
-app.get('/alunos/:id', (req, res) => {
-    let id = req.params.id;
-    const aluno = alunos.consultarPorId(id);
-    if (aluno) {
-        return res.status(200).json(aluno);
+// Rota para consultar uma montadora por ID
+app.get('/montadora/:id', (req, res) => {
+    const id = req.params.id;
+    const montadora = montadoras.consultarPorId(id);
+    if (montadora) {
+        return res.status(200).json(montadora);
     } else {
-        return res.status(404).json({ message: "Aluno não encontrado" });
+        return res.status(404).json({ message: "Montadora não encontrada" });
     }
 });
 
-// Rota para listar disciplinas (com filtro por nome)
-app.get("/disciplinas", (req, res) => {
-    const { nome } = req.query; // Captura o parâmetro de consulta "nome"
-    const disciplinasFiltradas = disciplinas.listar(nome); // Chama a função listar de disciplinas
-    res.json(disciplinasFiltradas); // Retorna a lista filtrada
+// Rota para listar todos os veículos (com filtro por montadora ou busca)
+app.get('/veiculo', (req, res) => {
+    const { montadora, search } = req.query;
+    return res.status(200).json(veiculos.listar(montadora, search));
 });
 
-// Rota para buscar uma disciplina por ID
-app.get('/disciplinas/:id', (req, res) => {
-    let id = req.params.id;
-    const disciplina = disciplinas.consultarPorId(id);
-    if (disciplina) {
-        return res.status(200).json(disciplina);
+// Rota para consultar um veículo por ID
+app.get('/veiculo/:id', (req, res) => {
+    const id = req.params.id;
+    const veiculo = veiculos.consultarPorId(id);
+    if (veiculo) {
+        return res.status(200).json(veiculo);
     } else {
-        return res.status(404).json({ message: "Disciplina não encontrada" });
+        return res.status(404).json({ message: "Veículo não encontrado" });
     }
 });
 
