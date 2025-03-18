@@ -1,4 +1,4 @@
-import { veiculos } from "../data/dados.js";
+import { veiculos } from "../data/dados.js"; // Importe os veiculos para acessar tudo :)
 import { montadoras } from "../data/dados.js"; // Importe as montadoras para acessar os nomes
 
 export const listar = (montadoraId, search) => {
@@ -13,7 +13,7 @@ export const listar = (montadoraId, search) => {
     if (search) {
         resultado = resultado.filter(veiculo => {
             // Verifica se o nome do veículo contém a busca
-            const veiculoMatch = v9eiculo.modelo.toLowerCase().includes(search.toLowerCase());
+            const veiculoMatch = veiculo.modelo.toLowerCase().includes(search.toLowerCase());
 
             // Encontra a montadora associada ao veículo
             const montadoraDoVeiculo = montadoras.find(montadora => montadora.id === veiculo.montadora);

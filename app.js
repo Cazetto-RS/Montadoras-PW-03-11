@@ -16,7 +16,12 @@ app.get('/', (req, res) => {
 // Rota para listar todas as montadoras (com filtro por nome)
 app.get('/montadora', (req, res) => {
     const { search } = req.query; // Captura o parâmetro de busca
-    return res.status(200).json(montadoras.listar(search));
+    if (montadora) {        
+        return res.status(200).json(montadoras.listar(search));
+    }
+    else {
+        return res.status(404).json({ message: "Montadora não encontrada" });
+    }
 });
 
 // Rota para consultar uma montadora por ID
@@ -33,7 +38,12 @@ app.get('/montadora/:id', (req, res) => {
 // Rota para listar todos os veículos (com filtro por montadora ou busca)
 app.get('/veiculo', (req, res) => {
     const { montadora, search } = req.query;
-    return res.status(200).json(veiculos.listar(montadora, search));
+    if (montadora) {        
+        return res.status(200).json(veiculos.listar(montadora, search));
+    }
+    else {
+        return res.status(404).json({ message: "Veicula não encontrada" });
+    }
 });
 
 // Rota para consultar um veículo por ID
